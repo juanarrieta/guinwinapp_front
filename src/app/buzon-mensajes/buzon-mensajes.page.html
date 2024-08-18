@@ -1,0 +1,55 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+
+    <ion-title>Buzon de mensajes</ion-title>
+  </ion-toolbar>
+
+  <ion-toolbar>
+    <ion-searchbar placeholder="Buscar" animated (ionChange)="buscarMensajes($event)"></ion-searchbar>
+  </ion-toolbar>
+</ion-header>
+
+<div class="scrollable">
+  <ion-refresher slot="fixed" (ionRefresh)="doRefresh($event)">
+    <ion-refresher-content refreshingSpinner="bubbles"></ion-refresher-content>
+  </ion-refresher>
+
+  <span *ngFor="let mensaje of mensajes">
+    <ion-item *ngIf="mensaje.leido == 0 && mensaje.usrEnvio == 0" class="ionColor">
+      <ion-avatar slot="start">
+        <img src="../../assets/images/usuarios/{{mensaje.idVendedor}}">
+      </ion-avatar>
+      <ion-avatar slot="end">
+        <ion-icon name="search-outline" [routerLink]="['/chat', mensaje.idPublicacion, mensaje.idVendedor, mensaje.idComprador]"></ion-icon>
+      </ion-avatar>
+      <ion-avatar slot="end">
+         <ion-icon name="close-circle-outline" (click)="eliminarChat(mensaje.idComprador, mensaje.idPublicacion)"></ion-icon>
+      </ion-avatar>
+      <ion-label>
+        <h2 *ngIf="usuario != mensaje.idVendedor">{{mensaje.vendedor}}</h2>   
+        <h2 *ngIf="usuario != mensaje.idComprador">{{mensaje.comprador}}</h2>          
+        <h2>{{mensaje.ultMensaje}}</h2>
+      </ion-label>    
+    </ion-item> 
+
+    <ion-item *ngIf="mensaje.leido == 1 || mensaje.usrEnvio == 1">
+      <ion-avatar slot="start">
+        <img src="../../assets/images/usuarios/{{mensaje.idVendedor}}">
+      </ion-avatar>
+      <ion-avatar slot="end">
+        <ion-icon class="icoBut" name="search-outline" [routerLink]="['/chat', mensaje.idPublicacion, mensaje.idVendedor, mensaje.idComprador]"></ion-icon>
+      </ion-avatar>
+      <ion-avatar slot="end">
+         <ion-icon class="icoBut" name="close-circle-outline" (click)="eliminarChat(mensaje.idComprador, mensaje.idPublicacion)"></ion-icon>
+      </ion-avatar>
+      <ion-label>
+        <h2 *ngIf="usuario != mensaje.idVendedor">{{mensaje.vendedor}}</h2>   
+        <h2 *ngIf="usuario != mensaje.idComprador">{{mensaje.comprador}}</h2>          
+        <h2>{{mensaje.ultMensaje}}</h2>
+      </ion-label>    
+    </ion-item> 
+  </span>  
+</div>

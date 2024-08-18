@@ -1,0 +1,41 @@
+  <ion-row class="center">
+    <ion-col sizeLg="6" sizeMd="6" sizeXs="12">
+      <img src="../../assets/images/logoGW.jpg">
+    </ion-col>
+  </ion-row>
+
+<br><br><br><br>
+
+  <ion-row class="center">
+    <ion-label>
+      <h2>¿Qué quieres ver o vender hoy?</h2>
+    </ion-label>      
+  </ion-row>
+
+  <br><br>
+  
+  <span class="span">
+    <ion-button class="square-button" [routerLink]="['/busqueda-ini6']" (click)="guardarSeleccion(1)">
+      <ion-icon name="home" size="large"></ion-icon>&nbsp;
+      Arriendos
+    </ion-button>
+    
+    <ion-button class="square-button" [routerLink]="['/busqueda-ini6']" (click)="guardarSeleccion(2)">
+      <ion-icon name="briefcase" size="large"></ion-icon>&nbsp;
+      Servicios
+    </ion-button>
+  </span>  
+
+  <span class="span">
+    <ion-button class="square-button" [routerLink]="['/busqueda-ini6']" (click)="guardarSeleccion(3)">
+      <ion-icon name="cart" size="large"></ion-icon>&nbsp;
+      Articulos
+    </ion-button>
+  </span>  
+
+  <br><br><br><br>
+
+  <ion-row class="center">
+    <ion-progress-bar value="0.8" color="primary"></ion-progress-bar>
+  </ion-row>
+  

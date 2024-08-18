@@ -1,0 +1,32 @@
+  <ion-row class="center"> 
+    <img class="imarg" src="../../assets/images/logoGW.jpg">  
+  </ion-row>
+
+<br><br><br><br>
+
+  <ion-row class="center" >
+    <ion-label>
+      <h2>Para comenzar selecciona tu país</h2>
+    </ion-label>      
+  </ion-row>
+
+  <ion-row class="ion-justify-content-center">    
+    <ion-col sizeLg="6" sizeMd="6" sizeXs="12">
+      <ion-select class = "select" label="Seleccione país" label-placement="floating" fill="outline" (ionChange)="guardarSeleccion($event)">
+        <ion-select-option value="{{pais.COD_PAIS}}" *ngFor="let pais of paises">{{pais.PAIS}}</ion-select-option>
+      </ion-select>
+    </ion-col>    
+  </ion-row>
+
+  <br><br><br>
+
+  <ion-row class="center">
+   <ion-button id="btnSiguiente" class="center boton" [disabled]="isBotonDeshabilitado" [routerLink]="['/busqueda-ini2']">Siguiente</ion-button>
+  </ion-row>
+
+  <br><br><br><br>
+
+  <ion-row class="center">
+    <ion-progress-bar value="0.16" color="primary"></ion-progress-bar>
+  </ion-row>
+  

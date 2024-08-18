@@ -1,0 +1,30 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    
+    <ion-title>Chat con {{nombreChat}}
+    <br>
+    <ion-label class="restantes">{{enviosRestantes}}</ion-label></ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<div class="scrollable fondoChat">
+  <div class="chat-container" *ngFor="let mensaje of mensajes">
+    <div class="message {{classMsnV}}" *ngIf="mensaje.MENSAJE_VENDEDOR">
+      <div class="message-content">{{mensaje.MENSAJE_VENDEDOR}}</div>
+    </div>
+    
+    <div class="message {{classMsnC}}" *ngIf="mensaje.MENSAJE_COMPRADOR">
+      <div class="message-content">{{mensaje.MENSAJE_COMPRADOR}}</div>
+    </div>
+  </div>
+</div>
+
+<ion-footer>
+  <ion-toolbar>
+    <ion-input [(ngModel)]="newMessage" placeholder="Escribe un mensaje"></ion-input>
+    <ion-button class="center" disabled="{{blockEnvio}}" (click)="enviarMensaje()">Enviar</ion-button>
+  </ion-toolbar>
+</ion-footer>

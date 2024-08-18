@@ -1,0 +1,34 @@
+  <ion-row class="center">
+    <ion-col sizeLg="6" sizeMd="6" sizeXs="12">
+      <img src="../../assets/images/logoGW.jpg">
+    </ion-col>
+  </ion-row>
+
+<br><br><br><br>
+
+  <ion-row class="center" >
+    <ion-label>
+      <h2>Ahora selecciona tu departamento</h2>
+    </ion-label>      
+  </ion-row>
+
+  <ion-row class="ion-justify-content-center">    
+    <ion-col sizeLg="6" sizeMd="6" sizeXs="12">
+      <ion-select class = "select" label="Seleccione departamento" label-placement="floating" fill="outline" (ionChange)="guardarSeleccion($event)">
+        <ion-select-option *ngFor="let departamento of departamentos" value="{{departamento.COD_DEPARTAMENTO}}">{{departamento.DEPARTAMENTO}}</ion-select-option>
+      </ion-select>
+    </ion-col>    
+  </ion-row>
+
+  <br><br><br>
+
+  <ion-row class="center">
+   <ion-button class="center boton" [routerLink]="['/busqueda-ini3']" [disabled]="isBotonDeshabilitado">Siguiente</ion-button>
+  </ion-row>
+
+  <br><br><br><br>
+
+  <ion-row class="center">
+    <ion-progress-bar value="0.33" color="primary"></ion-progress-bar>
+  </ion-row>
+  

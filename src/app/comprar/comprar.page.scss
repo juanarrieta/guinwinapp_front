@@ -1,0 +1,38 @@
+#container{
+    text-align: center;   
+    transform: translateY(1000%);
+}
+
+.card-tittle{
+    font-size: 23px;
+    font-weight: bold;
+    margin-top: 8px;
+    margin-bottom: 8px;
+    text-align: center;
+}
+
+ion-card{
+    position: relative;    
+    border-radius: 15px; 
+    text-align: center;
+    height: 110%;
+}
+
+.center{
+    display: flex;
+    justify-content: center;  
+}
+
+.icoBut{
+    width: 15%;
+    height: 15%;
+}
+
+ion-col{
+    margin-bottom: 10%;
+}
+  
+  
+  
+  
+  

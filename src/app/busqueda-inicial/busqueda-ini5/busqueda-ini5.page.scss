@@ -1,0 +1,32 @@
+.boton{   
+    transform: translateY(100%);
+    width: 88%;
+}
+
+.logo{
+    transform: translateY(10%);
+}
+
+.center{
+    display: flex;
+    justify-content: center;  
+}
+
+.select{
+    --border-color: #dddada;
+    --border-radius: 10px;
+    --padding-start: 5%;
+    --padding-end: 5%;
+    padding: 5%;
+}
+
+.square-button {
+    width: 40%;
+    height: 100%;
+    --border-radius: 5%;
+  }
+
+.span{
+    text-align: center;  
+}
+

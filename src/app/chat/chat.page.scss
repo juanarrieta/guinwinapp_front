@@ -1,0 +1,38 @@
+.chat-container {
+  display: flex;
+  flex-direction: column;
+  padding: 10px;
+}
+
+.message {
+  margin: 5px;
+  padding: 10px;
+  border-radius: 10px;
+  max-width: 70%;
+}
+
+.received {
+  background-color: #f2f2f2;
+  align-self: flex-start;
+  font-weight: bold;
+}
+
+.sent {
+  background-color: #4caf50;
+  align-self: flex-end;
+  color: white;
+}
+
+.center{
+  display: flex;
+  justify-content: center;  
+}
+
+.restantes{
+  color: white;
+  font-size: small;
+}
+
+.fondoChat{
+  background-image: url('../../assets/images/fondo-whatsap.jpg');
+}

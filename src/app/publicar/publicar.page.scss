@@ -1,0 +1,58 @@
+.select{
+    --border-color: #dddada;
+    --border-radius: 10px;
+    --padding-start: 5%;
+    --padding-end: 5%;
+}
+
+.boton{   
+    transform: translateY(50%);
+    width: 88%;
+}
+
+.btn{
+    width: 100%;
+}
+
+.center{
+    display: flex;
+    justify-content: center;  
+}
+
+ion-img {
+    width: 120px;
+    height: 120px;
+    display: inline-block;
+    margin-right: 10px; /* Espacio entre las imágenes */
+    vertical-align: top;
+    border: 1px solid #ccc;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+    border-radius: 8px;
+}
+
+ion-img:hover {
+    border: 2px solid #007bff; /* Cambia el borde al pasar el mouse sobre la imagen */
+}   
+
+.contenedor-imagenes {
+    display: flex;
+    overflow-x: auto; /* Habilita la barra de desplazamiento horizontal */
+    white-space: nowrap; /* Evita que las imágenes se rompan en varias líneas */
+    max-width: 100%; /* Ajusta el ancho máximo según tus necesidades */
+}
+  
+.scrollable {
+    overflow-y: auto; /* Agrega un desplazamiento vertical */
+    height: 90%; /* Establece la altura del div */
+}
+
+ion-select {
+    margin-left: 1% !important;
+    width: 99% !important;
+}
+
+.custom-file-input {
+    border: none !important;
+    font-size: large !important;    
+    text-align: center;
+  }

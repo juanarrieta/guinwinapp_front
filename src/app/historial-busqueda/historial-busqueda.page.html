@@ -1,0 +1,32 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+
+    <ion-title>Historial de busqueda</ion-title>
+  </ion-toolbar>
+
+  <ion-toolbar>
+    <ion-searchbar placeholder="Buscar" animated (ionChange)="buscarPublicacion($event)"></ion-searchbar>
+  </ion-toolbar>
+</ion-header>
+
+<div class="scrollable">
+  <ion-refresher slot="fixed" (ionRefresh)="refrescar($event)">
+    <ion-refresher-content refreshingSpinner="bubbles"></ion-refresher-content>
+  </ion-refresher>
+  
+  <ion-row>
+    <ion-col sizeLg="6" sizeMd="6" sizeXs="12" *ngFor="let publicacion of listPublicaciones">
+      <ion-card>
+        <img src="../../assets/images/{{publicacion.foto_pri}}">
+        <div class="card-tittle">
+          {{publicacion.nombre}}  ${{publicacion.precio}}            
+        </div>       
+        <ion-icon name="search-outline" class="icoBut" [routerLink]="['/comprar/detalle', publicacion.id]"></ion-icon>
+        <ion-icon name="close-circle-outline" class="icoBut" (click)="eliminarDelHistorial(publicacion.id)"></ion-icon>
+      </ion-card>
+    </ion-col>
+  </ion-row>
+</div>

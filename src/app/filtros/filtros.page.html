@@ -1,0 +1,78 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    
+    <ion-title>Filtros</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<div class="scrollable">
+  <ion-row class="ion-justify-content-center">    
+    <ion-col sizeLg="6" sizeMd="6" sizeXs="12">
+      <ion-select [(ngModel)]="selDepartamento" class = "select" label="Seleccione departamento" label-placement="floating" fill="outline" (ionChange)="cargarCiudades($event)">
+        <ion-select-option value="">Seleccione</ion-select-option>
+        <ion-select-option *ngFor="let departamento of departamentos" value="{{departamento.COD_DEPARTAMENTO}}">{{departamento.DEPARTAMENTO}}</ion-select-option>
+      </ion-select>
+    </ion-col>    
+  </ion-row>
+
+  <ion-row class="ion-justify-content-center">    
+    <ion-col sizeLg="6" sizeMd="6" sizeXs="12">
+      <ion-select [(ngModel)]="selCiudad"  class = "select" label="Seleccione ciudad" label-placement="floating" fill="outline" (ionChange)="guardarCiudad($event)">
+        <ion-select-option value="">Seleccione</ion-select-option>
+        <ion-select-option *ngFor="let ciudad of ciudades" value="{{ciudad.COD_MUNICIPIO}}">{{ciudad.MUNICIPIO}}</ion-select-option>
+      </ion-select>
+    </ion-col>    
+  </ion-row>
+
+  <ion-row class="ion-justify-content-center">    
+    <ion-col sizeLg="6" sizeMd="6" sizeXs="12">
+      <ion-select [(ngModel)]="selModulo" class = "select" label="Seleccione modulo" label-placement="floating" fill="outline" (ionChange)="guardarModulo($event)">
+        <ion-select-option value="">Seleccione</ion-select-option>
+        <ion-select-option value="1">Arriendos</ion-select-option>
+        <ion-select-option value="2">Servicios</ion-select-option>
+        <ion-select-option value="3">Articulos</ion-select-option>
+      </ion-select>
+    </ion-col>    
+  </ion-row>
+
+  <ion-row class="ion-justify-content-center">    
+    <ion-col sizeLg="6" sizeMd="6" sizeXs="12">
+      <ion-select [(ngModel)]="selPrecio" class = "select" label="Precio" label-placement="floating" fill="outline" (ionChange)="guardarPrecios($event)">
+        <ion-select-option value="">Seleccione</ion-select-option>
+        <ion-select-option value="1">$0 - $100.000</ion-select-option>
+        <ion-select-option value="2">$100.001 - $500.000</ion-select-option>
+        <ion-select-option value="3">$500.001 - $1.000.000</ion-select-option>
+        <ion-select-option value="4">$1.000.001 - $1.500.000</ion-select-option>
+        <ion-select-option value="5">Mas de $1.500.000</ion-select-option>
+      </ion-select>
+    </ion-col>    
+  </ion-row>
+
+  <ion-row class="ion-justify-content-center">    
+    <ion-col sizeLg="6" sizeMd="6" sizeXs="12">
+      <ion-select [(ngModel)]="selOrden" class = "select" label="Seleccione orden" label-placement="floating" fill="outline" (ionChange)="guardarOrden($event)">
+        <ion-select-option value="">Seleccione</ion-select-option>
+        <ion-select-option value="1">Precio menor a mayor</ion-select-option>
+        <ion-select-option value="2">Precio mayor a menor</ion-select-option>
+        <ion-select-option value="3">Fecha antigua a reciente</ion-select-option>
+        <ion-select-option value="4">Fecha reciente a antigua</ion-select-option>
+      </ion-select>
+    </ion-col>    
+  </ion-row>
+
+  <ion-item>
+    <ion-label position="floating">Palabra clave</ion-label>
+    <br>
+    <ion-input [(ngModel)]="palabraClave"></ion-input>
+  </ion-item>
+
+  <ion-row class="center">
+    <ion-button class="center boton" (click)="guardarFiltros()">Buscar</ion-button>
+  </ion-row>
+  <ion-row class="center">
+    <ion-button class="center boton" (click)="limpiarFiltros()">Limpiar filtros</ion-button>
+  </ion-row>
+</div>
