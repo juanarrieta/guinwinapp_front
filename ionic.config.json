@@ -1,0 +1,8 @@
+{
+  "name": "GWA_FrontEnd",
+  "integrations": {
+    "cordova": {},
+    "capacitor": {}
+  },
+  "type": "angular"
+}
